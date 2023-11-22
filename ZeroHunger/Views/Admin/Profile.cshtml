@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Profile</h2>
+
+<br />
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>DateOfBirth</th>
+        <th>Phone</th>
+
+    </tr>
+
+    <tr>
+
+        <td>@Model.Id</td>
+        <td>@Model.Name</td>
+        <td>@Model.Email</td>
+        <td>@Model.Password</td>
+        <td>@Model.DateOfBirth</td>
+        <td>@Model.Phone</td>
+
+    </tr>
+
+</table>

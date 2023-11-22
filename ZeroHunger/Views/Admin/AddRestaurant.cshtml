@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "AddRestaurant";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add Restaurant</h2>
+
+<form action="" method="post" class="form-control">
+
+    @Html.ValidationMessage("Name")
+    <input type="text" class="form-control" name="Name" placeholder="Enter Name" />
+    @Html.ValidationMessage("Email")
+    <input type="text" class="form-control" name="Email" placeholder="Enter Email" />
+    @Html.ValidationMessage("Password")
+    <input type="password" class="form-control" name="Password" placeholder="Enter Password" />
+    @Html.ValidationMessage("Phone")
+    <input type="text" class="form-control" name="Phone" placeholder="Enter Phone Number" />
+    @Html.ValidationMessage("Address")
+    <input type="tel" class="form-control" name="Address" placeholder="Enter Address" />
+
+    <input type="submit" value="Add" class="btn btn-outline-primary" />
+
+</form>

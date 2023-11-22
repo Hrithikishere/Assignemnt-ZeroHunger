@@ -1,0 +1,36 @@
+﻿@model ZeroHunger.EF.Employee
+@{
+    ViewBag.Title = "Requests";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h2>Requests</h2>
+<br />
+<br />
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Restaurant ID</th>
+        <th>Food Name</th>
+        <th>Food Quantity (KG)</th>
+        <th>Max Preserve Time</th>
+        <th>Employee Name</th>
+        <th>Status</th>
+
+    </tr>
+
+    @foreach (var data in Model.Requests)
+    {
+        <tr>
+            <td>@data.Id</td>
+            <td>@data.RestaurantId</td>
+            <td>@data.FoodName</td>
+            <td>@data.FoodQuantity</td>
+            <td>@data.MaxPreserveTime</td>
+            <td>@data.Status</td>
+            <td><a href="/Employee/RequestsDetails/@data.Id" class="btn btn-outline-success">View Details</a></td>
+        </tr>
+    }
+
+</table>

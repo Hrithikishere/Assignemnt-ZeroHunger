@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "EditRestaurant";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit Restaurant</h2>
+
+<form action="" method="post" class="form-control">
+
+    <input type="text" class="form-control" name="Name" placeholder="Enter Name" value="@Model.Name" />
+    <input type="text" class="form-control" name="Email" placeholder="Enter Email" value="@Model.Email" />
+    <input type="password" class="form-control" name="Password" placeholder="Enter Password" value="@Model.Password" />
+    <input type="text" class="form-control" name="Phone" placeholder="Enter Phone Number" value="@Model.Phone" />
+    <input type="tel" class="form-control" name="Address" placeholder="Enter Address" value="@Model.Address" />
+    <input type="submit" value="Edit" class="btn btn-outline-primary" />
+
+</form>

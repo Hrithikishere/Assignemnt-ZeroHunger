@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Restaurants";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Restaurant</h2>
+
+<a href="/Admin/AddRestaurant" class="btn btn-outline-secondary">Add Restaurant</a>
+
+<br />
+<br />
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone</th>
+
+    </tr>
+
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@data.Id</td>
+            <td>@data.Name</td>
+            <td>@data.Email</td>
+            <td>@data.Address</td>
+            <td>@data.Phone</td>
+            <td><a href="/Admin/EditRestaurant/@data.Id" class="btn btn-outline-warning">Edit</a></td>
+            <td><a href="/Admin/DeleteRestaurant/@data.Id" class="btn btn-outline-danger">Delete</a></td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model ZeroHunger.EF.Restaurant
+@{
+    ViewBag.Title = "Requests";
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<h2>Requests</h2>
+
+<a href="/Restaurant/AddRequest" class="btn btn-outline-secondary">Add Request</a>
+
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Food Name</th>
+        <th>Food Quantity (KG)</th>
+        <th>Maximum Preserve Time</th>
+        <th>Receiver Name</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var data in Model.Requests)
+    {
+
+        <tr>
+            <td>@data.FoodName</td>
+            <td>@data.FoodQuantity</td>
+            <td>@data.MaxPreserveTime</td>
+            @if (data.ReceiverId != null)
+            {
+                <td>@data.Employee.Name</td>
+            }
+            else
+            {
+                <td>Not Assigned</td>
+
+            }
+            <td>@data.Status</td>
+            <td><a href="/Admin/EditRequest/@data.Id" class="btn btn-outline-warning">Edit</a></td>
+            <td><a href="/Admin/DeleteRequest/@data.Id" class="btn btn-outline-danger">Delete</a></td>
+        </tr>
+    }
+</table>

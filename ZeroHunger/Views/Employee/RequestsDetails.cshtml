@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "RequestsDetails";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h2>RequestsDetails</h2>
+
+<form action="" method="post">
+
+    <p>Request Id</p>
+    <input type="text" name="Id" class="form-control" value="@Model.Id" />
+    <p>Request Restaurant Id</p>
+    <input type="text" name="RestaurantId" class="form-control" value="@Model.RestaurantId" />
+    <p>Food Name</p>
+
+    <input type="text" name="FoodName" class="form-control" value="@Model.FoodName" />
+    <p>Food Quantity</p>
+
+    <input type="text" name="FoodQuantity" class="form-control" value="@Model.FoodQuantity" />
+    <p>Food Reservation Time</p>
+
+    <input type="text" name="MaxPreserveTime" class="form-control" value="@Model.MaxPreserveTime" />
+
+    <select name="Status">
+        
+        <option selected value="Accepted">Accepted</option>
+        <option value="Food Picked">Food Picked</option>
+        <option value="Food Picked">Food Delivered</option>
+    </select>
+
+    <input type="submit" value="Change Status" />
+</form>
