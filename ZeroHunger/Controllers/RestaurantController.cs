@@ -54,7 +54,7 @@ namespace ZeroHunger.Controllers
                 var db = new ZeroHungerEntities1();
                 var data = db.TemporaryRequests.Add(request);
                 db.SaveChanges();
-                return RedirectToAction("AddRequest");
+                return RedirectToAction("Requests");
             }
             return View();
         }

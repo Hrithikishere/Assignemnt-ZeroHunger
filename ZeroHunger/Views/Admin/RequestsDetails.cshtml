@@ -24,15 +24,16 @@
     <input type="text" name="MaxPreserveTime" class="form-control" value="@Model.MaxPreserveTime" />
     <p>Choose an Employee</p>
 
-    <select name="ReceiverId">
+    <select name="ReceiverId" class="form-control">
         <option selected>Select an Employee</option>
         @foreach (var ename in ViewBag.Employees)
         {
             <option value="@ename.Id">@ename.Name</option>
         }
     </select>
-
+    <br />
+    <br />
     <input type="submit" value="Accept" class="btn btn-outline-success" />
+<a href="/Admin/RejectRequest/@Model.Id" class="btn btn-outline-warning">Reject Request</a>
 
 </form>
-<a href="/Admin/RejectRequest/@Model.Id" class="btn btn-outline-warning">Reject Request</a>
