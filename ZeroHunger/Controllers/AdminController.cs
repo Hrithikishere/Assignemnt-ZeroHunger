@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -52,9 +53,16 @@ namespace ZeroHunger.Controllers
         // GET: Admin
         public ActionResult Employees()
         {
+
+
             var db = new ZeroHungerEntities1();
             var data = db.Employees.ToList();
-            return View(data);
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<Employee, EmployeeDTO>();
+            });
+            var mapper = new Mapper(config);
+            var converted = mapper.Map<List<EmployeeDTO>>(data);
+            return View(converted);
         }
 
         [HttpGet]
@@ -146,7 +154,12 @@ namespace ZeroHunger.Controllers
         {
             var db = new ZeroHungerEntities1();
             var data = db.Restaurants.ToList();
-            return View(data);
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<Restaurant, RestaurantDTO>();
+            });
+            var mapper = new Mapper(config);
+            var converted = mapper.Map<List<RestaurantDTO>>(data);
+            return View(converted);
         }
 
         [HttpGet]
@@ -208,6 +221,8 @@ namespace ZeroHunger.Controllers
         {
             var db = new ZeroHungerEntities1();
             var data = db.TemporaryRequests.ToList();
+
+
 
             return View(data);
         }

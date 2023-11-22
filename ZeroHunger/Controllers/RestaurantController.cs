@@ -46,13 +46,13 @@ namespace ZeroHunger.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddRequest(RequestDTO requestdto){
+        public ActionResult AddRequest(TemporaryRequest request){
 
             if (ModelState.IsValid)
             {
-                Request request = Convert(requestdto);
+                //Request request = Convert(requestdto);
                 var db = new ZeroHungerEntities1();
-                var data = db.Requests.Add(request);
+                var data = db.TemporaryRequests.Add(request);
                 db.SaveChanges();
                 return RedirectToAction("AddRequest");
             }
